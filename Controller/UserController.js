@@ -97,11 +97,11 @@ const Register = async (req, res) => {
 };
 
 const Login = async (req, res) => {
- 
+ console.log(req.body);
 
   try {
     const loginUser = await user.findOne({ email: req.body.email });
-   
+   console.log(loginUser,"user");
     if (!loginUser) {
       throw new Error("Email not in use");
     }
